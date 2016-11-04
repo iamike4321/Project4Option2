@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    img {width:50%; height: 50%}
+
+</style>
+<body>
+
+
+
+<form name=slots onsubmit="rollem(); return false;">
+
+
+
+<table border=0 cellpadding=3 cellspacing=1 width=300>
+
+<tr><th colspan=2> Welcome to the Slot Machine! </th></tr>
+
+<tr><th align=right> Gold: </th>	<td align=left><input type=box size=5 name=gold READONLY value=25></td></tr>
+
+<tr><th align=right> Your bet: </th>	<td align=left><input type=box size=5 name=bet></td></tr>
+
+<tr><th><input type=submit value="Spin the slots"></th>
+
+<th><input type=button value="I am done for now" onclick="stopplay();"></th></tr>
+
+<tr><th colspan=2> <input type=reset value="Start over"> </th></tr>
+
+<tr><td colspan=2><hr></td></tr>
+
+
+
+<tr><td colspan=2>
+
+
+	<table cellspacing=5 cellpadding=2 border=0><tr>
+
+	<td><img src=1.gif name=slot1></td>
+
+	<td><img src=2.gif name=slot2></td>
+
+	<td><img src=3.gif name=slot3></td>
+
+	</tr></table>
+
+	<input type=text readonly size=33 name=banner >
+
+</td></tr>
+
+
+
+<tr><td colspan=2><hr></td></tr>
+
+<tr><td colspan=2><center>
+
+	<table width=100% border=0>
+
+        <!-- Need to fix img's-->
+
+	<tr>
+        <th colspan=3>
+            <font size=+1>
+                Payouts
+        </th>
+    </tr>
+
+	<tr><th> 3 of a kind </th>	<td> <img src=1.gif> <img src=1.gif> <img src=1.gif> </td><th> 10x your bet </th></tr>
+
+	<tr><th> A pair </th>	<td> <img src=2.gif> <img src=2.gif> <img src=3.gif> </td><th> 2x your bet </th></tr>
+
+	<tr><th> or </th>	<td> <img src=0.gif> <img src=4.gif> <img src=4.gif> </td><th> 2x your bet </th></tr>
+
+	<tr><th> or </th>   <td> <img src=5.gif> <img src=6.gif> <img src=5.gif> </td><th> 2x your bet </th></tr>
+
+	<tr><th> No match </th>	<td> <img src=7.gif> <img src=8.gif> <img src=9.gif> </td><th> You lose </th></tr>
+
+	</table>
+
+</td></tr>
+
+</table></center>
+
+</form>
+
+
+
+    <script>
+    var slots;
+    var gold;
+        slotitem = new Array('0','1','2','3','4','5','6','7','8','9');
+
+        document.slots.bet.focus();
+
+
+
+        startgold=25;
+
+        document.slots.gold.value=startgold;
+
+
+
+        function stopplay () {
+
+        if (document.slots.gold.value < startgold)
+
+	    {alert("You lost "+ (startgold-document.slots.gold.value) +" gold pieces.   ");}
+
+        else 	{alert("You gained "+ (document.slots.gold.value-startgold) +" gold pieces.   ");}
+
+            }
+
+
+
+        function rollem () {
+
+        if (document.slots.bet.value<1 || document.slots.bet.value == "") {alert("You cannot bet less that 1.   "); return;}
+
+        if (Math.floor(document.slots.gold.value) < Math.floor(document.slots.bet.value)) {alert("Your bet "+document.slots.bet.value+" is larger than your remaining gold "+document.slots.gold.value+".  "); return;}
+
+        if (document.slots.bet.value>1) {document.slots.banner.value="Bet is "+document.slots.bet.value+" gold pieces";}
+
+        else {document.slots.banner.value="Bet is "+document.slots.bet.value+" gold piece";}
+        counter=0;
+
+        spinem();
+
+            }
+
+
+
+
+
+        function spinem() {
+
+        turns1=10+Math.floor((Math.random() * 10));
+
+        for (a=0;a<turns1;a++)
+        {document.slots.slot1.src=""+slotitem[a % 9]+".gif"; }
+
+        turns2=10+Math.floor((Math.random() * 10));
+
+    for (b=0;b<turns2;b++)
+
+	    {document.slots.slot2.src=""+slotitem[b % 9]+".gif"; }
+
+        turns3=10+Math.floor((Math.random() * 10));
+
+    for (c=0;c<turns3;c++)
+
+	    {document.slots.slot3.src=""+slotitem[c % 9]+".gif"; }
+
+	    counter++;
+
+    if (counter<25) {setTimeout("spinem(counter);",50);} else {checkmatch();}
+
+}
+
+
+
+
+
+    function checkmatch()	{
+
+    if ((document.slots.slot1.src == document.slots.slot2.src) && (document.slots.slot1.src == document.slots.slot3.src))
+
+	{document.slots.banner.value="3 of a kind - You won "+Math.floor(document.slots.bet.value*10)+" gold pieces";
+
+	 document.slots.gold.value=Math.floor(document.slots.gold.value)+Math.floor(document.slots.bet.value*10); }
+
+    else if ((document.slots.slot1.src == document.slots.slot2.src) ||
+
+	(document.slots.slot1.src == document.slots.slot3.src) ||
+
+	(document.slots.slot2.src == document.slots.slot3.src))
+
+		{document.slots.banner.value="A pair - You won "+Math.floor(document.slots.bet.value*2)+" gold pieces";
+
+		 document.slots.gold.value = Math.floor(document.slots.bet.value*2) + Math.floor(document.slots.gold.value);}
+
+    else {document.slots.gold.value=document.slots.gold.value-document.slots.bet.value;
+
+		document.slots.banner.value="No match - You lost "+document.slots.bet.value+" gold pieces";}
+
+	}
+
+</script>
+
+</body>
+</html>
