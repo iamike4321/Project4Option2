@@ -1,29 +1,15 @@
 var slots;
 var gold;
 slotitem = new Array('0','1','2','3','4','5','6','7','8','9');
-
 document.slots.bet.focus();
-
-
-
 startgold=25;
-
 document.slots.gold.value=startgold;
 
-
-
 function stopplay () {
-
     if (document.slots.gold.value < startgold)
-
     {alert("You lost "+ (startgold-document.slots.gold.value) +" gold pieces.   ");}
-
     else 	{alert("You gained "+ (document.slots.gold.value-startgold) +" gold pieces.   ");}
-
 }
-
-
-
 function rollem () {
 
     if (document.slots.bet.value<1 || document.slots.bet.value == "") {alert("You cannot bet less that 1.   "); return;}
@@ -34,15 +20,8 @@ function rollem () {
 
     else {document.slots.banner.value="Bet is "+document.slots.bet.value+" gold piece";}
     counter=0;
-
     spinem();
-
 }
-
-
-
-
-
 function spinem() {
 
     turns1=10+Math.floor((Math.random() * 10));
@@ -65,13 +44,7 @@ function spinem() {
     counter++;
 
     if (counter<25) {setTimeout("spinem(counter);",50);} else {checkmatch();}
-
 }
-
-
-
-
-
 function checkmatch()	{
 
     if ((document.slots.slot1.src == document.slots.slot2.src) && (document.slots.slot1.src == document.slots.slot3.src))
