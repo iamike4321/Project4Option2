@@ -21,21 +21,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="testt.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="testt.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/testt.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="60" column="30" selection-start-line="60" selection-start-column="30" selection-end-line="60" selection-end-column="30" />
+            <state relative-caret-position="178">
+              <caret line="49" column="62" selection-start-line="49" selection-start-column="62" selection-end-line="49" selection-end-column="62" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="math.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="math.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/math.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1440">
-              <caret line="96" column="1" selection-start-line="96" selection-start-column="1" selection-end-line="96" selection-end-column="1" />
+            <state relative-caret-position="120">
+              <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -190,12 +190,12 @@
       <workItem from="1478131173840" duration="2472000" />
       <workItem from="1478215783324" duration="1891000" />
       <workItem from="1478300624477" duration="1214000" />
-      <workItem from="1478560538211" duration="1878000" />
+      <workItem from="1478560538211" duration="2120000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7961000" />
+    <option name="totallyTimeSpent" value="8203000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -270,18 +270,18 @@
     <entry file="file://$PROJECT_DIR$/jQuery-SlotMachine-master/dist/jquery.slotmachine.css" />
     <entry file="file://$PROJECT_DIR$/jQuery-SlotMachine-master/test/SlotMachine.html" />
     <entry file="file://$PROJECT_DIR$/jQuery-SlotMachine-master/index.html" />
-    <entry file="file://$PROJECT_DIR$/math.js">
+    <entry file="file://$PROJECT_DIR$/testt.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1440">
-          <caret line="96" column="1" selection-start-line="96" selection-start-column="1" selection-end-line="96" selection-end-column="1" />
+        <state relative-caret-position="178">
+          <caret line="49" column="62" selection-start-line="49" selection-start-column="62" selection-end-line="49" selection-end-column="62" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/testt.html">
+    <entry file="file://$PROJECT_DIR$/math.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="60" column="30" selection-start-line="60" selection-start-column="30" selection-end-line="60" selection-end-column="30" />
+        <state relative-caret-position="120">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
           <folding />
         </state>
       </provider>
